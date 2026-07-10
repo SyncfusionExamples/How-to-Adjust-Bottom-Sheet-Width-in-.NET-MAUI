@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BottomSheetSample.MainPage"
+             xmlns:bottomSheet="clr-namespace:Syncfusion.Maui.Toolkit.BottomSheet;assembly=Syncfusion.Maui.Toolkit"
+             xmlns:local="clr-namespace:BottomSheetSample">
+    
+    <bottomSheet:SfBottomSheet
+        x:Name="orderDetailsSheet"
+        ContentWidthMode="Custom"
+        BottomSheetContentWidth="500">
+
+                <bottomSheet:SfBottomSheet.Content>
+                <Border StrokeThickness="1" WidthRequest="400" HeightRequest="250" VerticalOptions="Start"
+                          Padding="15"
+                          Stroke="LightGray"
+                         StrokeShape="RoundRectangle 10">
+
+                    <Grid ColumnDefinitions="Auto,*">
+                    <VerticalStackLayout Spacing="8">
+                        <Label Text="Orders" FontSize="24" FontAttributes="Bold" Margin="0,0,0,20" />
+                        <Label Text="Order #10245" FontSize="18" FontAttributes="Bold" />
+                        <Label Text="Customer: John Smith" />
+                        <Label Text="Order Date: 10-Jul-2026" />
+                        <Label Text="Status: Shipped" TextColor="Green" />
+                    </VerticalStackLayout>
+                    <Button Text="View Details" HeightRequest="50" Grid.Column="1"
+                                        HorizontalOptions="Center"
+                                        Clicked="Button_Clicked" />
+                    </Grid>
+
+                </Border>
+            </bottomSheet:SfBottomSheet.Content>
+            <bottomSheet:SfBottomSheet.BottomSheetContent>
+
+                <VerticalStackLayout Padding="20"
+                                 Spacing="12">
+
+                <Label Text="Order Details"
+                       FontSize="22"
+                       FontAttributes="Bold" />
+                <BoxView HeightRequest="1"
+                         Color="LightGray"/>
+                <Label Text="Order ID: #10245" />
+                <Label Text="Customer: John Smith" />
+                <Label Text="Order Date: 10-Jul-2026" />
+                <Label Text="Status: Shipped" />
+                 <Label Text="Shipping Address: 123 Main Street, New York" />
+                <Label Text="Total Amount: $299.99" />
+                <Button Text="Track Order" />
+                </VerticalStackLayout>
+
+            </bottomSheet:SfBottomSheet.BottomSheetContent>
+
+        </bottomSheet:SfBottomSheet>
+
+
+</ContentPage>
